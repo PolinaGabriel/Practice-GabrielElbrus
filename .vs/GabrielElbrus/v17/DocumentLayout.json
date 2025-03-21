@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57CEA7BE-0E77-4C70-8787-6711799471A6}|GabrielElbrus\\GabrielElbrus.csproj|c:\\users\\tycho\\source\\repos\\gabrielelbrus\\gabrielelbrus\\check.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57CEA7BE-0E77-4C70-8787-6711799471A6}|GabrielElbrus\\GabrielElbrus.csproj|solutionrelative:gabrielelbrus\\check.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57CEA7BE-0E77-4C70-8787-6711799471A6}|GabrielElbrus\\GabrielElbrus.csproj|c:\\users\\tycho\\source\\repos\\gabrielelbrus\\gabrielelbrus\\customerwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57CEA7BE-0E77-4C70-8787-6711799471A6}|GabrielElbrus\\GabrielElbrus.csproj|solutionrelative:gabrielelbrus\\customerwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57CEA7BE-0E77-4C70-8787-6711799471A6}|GabrielElbrus\\GabrielElbrus.csproj|c:\\users\\tycho\\source\\repos\\gabrielelbrus\\gabrielelbrus\\editwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57CEA7BE-0E77-4C70-8787-6711799471A6}|GabrielElbrus\\GabrielElbrus.csproj|solutionrelative:gabrielelbrus\\editwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\GabrielElbrus\\CustomerWindow.axaml.cs",
+              "RelativeDocumentMoniker": "GabrielElbrus\\CustomerWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\GabrielElbrus\\CustomerWindow.axaml.cs",
+              "RelativeToolTip": "GabrielElbrus\\CustomerWindow.axaml.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T22:51:44.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Check.cs",
+              "DocumentMoniker": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\GabrielElbrus\\Check.cs",
+              "RelativeDocumentMoniker": "GabrielElbrus\\Check.cs",
+              "ToolTip": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\GabrielElbrus\\Check.cs",
+              "RelativeToolTip": "GabrielElbrus\\Check.cs",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAAEcAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T22:46:17.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\GabrielElbrus\\EditWindow.axaml.cs",
+              "RelativeDocumentMoniker": "GabrielElbrus\\EditWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\tycho\\source\\repos\\GabrielElbrus\\GabrielElbrus\\EditWindow.axaml.cs",
+              "RelativeToolTip": "GabrielElbrus\\EditWindow.axaml.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAiwKkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T22:45:11.647Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

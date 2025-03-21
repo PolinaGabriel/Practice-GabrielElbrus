@@ -1,0 +1,241 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+        x:Class="GabrielElbrus.EditWindow">
+	<Border
+		Width="750"
+		Height="750"
+		Background="White">
+		<Grid
+			RowDefinitions="* * * * * * * * * * * * * *"
+			ColumnDefinitions="* 2*">
+			<WrapPanel
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.ColumnSpan="2">
+				<Image
+					Name="employeeImage"
+					Margin="10"
+					Width="30"
+					Height="30">
+				</Image>
+				<TextBlock
+					Name="employeeName"
+					Margin="0 10 10 10">
+				</TextBlock>
+				<TextBlock
+					Name="employeePosition"
+					Margin="10"
+					FontWeight="Bold">
+				</TextBlock>
+			</WrapPanel>
+			<TextBlock
+				Grid.Row="1"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Код:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Клиент:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="3"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Услуги:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="8"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Время (в часах):">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="9"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Статус:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="10"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Дата и время приобретения:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="11"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Дата и время закрытия:">
+			</TextBlock>
+			<TextBox
+				Name="codeBox"
+				Grid.Row="1"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				Text="{Binding SaleCode}">
+			</TextBox>
+			<WrapPanel
+				Grid.Row="2"
+				Grid.Column="1"
+				HorizontalAlignment="Left">
+				<ComboBox
+					Name="customerBox"
+					Margin="10"
+					Width="200">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock
+								TextWrapping="Wrap"
+								Text="{Binding CustomerName}">
+							</TextBlock>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+				<TextBox
+					Name="customerSearchBox"
+					KeyUp="FillCustomers"
+					Margin="0 10 10 10"
+					Width="200"
+					Watermark="Поиск клиента">
+				</TextBox>
+				<Button
+					Click="AddCustomer"
+					Margin="0 10 10 10"
+					Content="+">
+				</Button>
+			</WrapPanel>
+			<WrapPanel
+				Grid.Row="3"
+				Grid.RowSpan="5"
+				Grid.Column="1"
+				HorizontalAlignment="Left">
+				<ListBox
+					Name="serviceList"
+					Margin="10"
+					Width="200"
+					SelectionMode="Multiple">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock
+								TextWrapping="Wrap"
+								Text="{Binding ServiceName}">
+							</TextBlock>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+				<TextBox
+					Name="serviceSearchBox"
+					KeyUp="FillServices"
+					VerticalAlignment="Top"
+					Margin="0 10 10 10"
+					Width="200"
+					Height="30"
+					Watermark="Поиск услуги">
+				</TextBox>
+			</WrapPanel>
+			<TextBox
+				Name="timeBox"
+				Grid.Row="8"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				Text="{Binding SaleHours}">
+			</TextBox>
+			<ComboBox
+				Name="statusBox"
+				Grid.Row="9"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="200">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock
+							Text="{Binding StatusName}">
+						</TextBlock>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<WrapPanel
+				Grid.Row="10"
+				Grid.Column="1"
+				HorizontalAlignment="Left">
+				<CalendarDatePicker
+					Name="startDatePicker"
+					SelectedDate="{Binding SaleStart}"
+					Margin="10"
+					Width="150">
+				</CalendarDatePicker>
+				<TimePicker
+					Name="startTimePicker"
+					SelectedTime="{Binding SaleStart.TimeOfDay}"
+					Margin="0 10 10 10">
+				</TimePicker>
+			</WrapPanel>
+			<WrapPanel
+				Grid.Row="11"
+				Grid.Column="1"
+				HorizontalAlignment="Left">
+				<CalendarDatePicker
+					Name="endDatePicker"
+					SelectedDate="{Binding SaleEnd}"
+					Margin="10"
+					Width="150">
+				</CalendarDatePicker>
+				<TimePicker
+					Name="endTimePicker"
+					SelectedTime="{Binding SaleEnd.TimeOfDay}"
+					Margin="0 10 10 10">
+				</TimePicker>
+			</WrapPanel>
+			<TextBlock
+				Name="errorBlock"
+				Grid.Row="12"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				HorizontalAlignment="Center"
+				Margin="10"
+				Foreground="Red"
+				Text="Некорректные данные">
+			</TextBlock>
+			<WrapPanel
+				Grid.Row="13"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				HorizontalAlignment="Center">
+				<Button
+					Click="Cancel"
+					Margin="10"
+					Content="Отмена">
+				</Button>
+				<Button
+					Click="Checks"
+					Margin="0 10"
+					Content="Сохранить">
+				</Button>
+				<Button
+					Name="deleteButton"
+					Click="Delete"
+					Margin="10"
+					Content="Удалить">
+				</Button>
+			</WrapPanel>
+		</Grid>
+	</Border>
+</Window>

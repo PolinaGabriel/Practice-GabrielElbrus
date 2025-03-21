@@ -1,0 +1,101 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+        x:Class="GabrielElbrus.SaleWindow"
+        Title="История заказов">
+	<Grid
+		RowDefinitions="50 * 55">
+		<WrapPanel
+			Grid.Row="0">
+			<Image
+				Name="employeeImage"
+				Margin="10"
+				Width="30"
+				Height="30">
+			</Image>
+			<TextBlock
+				Name="employeeName"
+				Margin="0 10 10 10">
+			</TextBlock>
+			<TextBlock
+				Name="employeePosition"
+				Margin="10"
+				FontWeight="Bold">
+			</TextBlock>
+		</WrapPanel>
+		<ListBox
+			Name="saleList"
+			Grid.Row="1">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border
+						Margin="0 0 10 0"
+						BorderBrush="rgb(73, 140, 81)"
+						BorderThickness="1">
+						<Grid
+							ColumnDefinitions="1.5* 2* * *">
+							<TextBlock
+								Grid.Column="0"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Center"
+								Margin="10"
+								FontWeight="Bold"
+								Text="{Binding SaleCode}">
+							</TextBlock>
+							<TextBlock
+								Grid.Column="1"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="10"
+								Text="{Binding CustomerName}">
+							</TextBlock>
+							<TextBlock
+								Grid.Column="2"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="10"
+								Text="{Binding StatusName}">
+							</TextBlock>
+							<Button
+								Tag="{Binding SaleId}"
+								Click="EditSale"
+								IsVisible="{Binding Visibility}"
+								Grid.Column="3"
+								HorizontalAlignment="Right"
+								VerticalAlignment="Center"
+								Margin="10"
+								Content="Редактировать">
+							</Button>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<WrapPanel
+			Grid.Row="2"
+			HorizontalAlignment="Center">
+			<Button
+				Click="GoBack"
+				HorizontalAlignment="Center"
+				Margin="10"
+				Content="Выход">
+			</Button>
+			<Button
+				Name="addButton"
+				Click="AddSale"
+				HorizontalAlignment="Center"
+				Margin="10"
+				Content="Оформить заказ">
+			</Button>
+			<Button
+				Name="enterButton"
+				Click="GoToEnters"
+				HorizontalAlignment="Center"
+				Margin="10"
+				Content="История входов">
+			</Button>
+		</WrapPanel>
+	</Grid>
+</Window>

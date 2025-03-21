@@ -1,0 +1,178 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+		MaxWidth="600" MaxHeight="600"
+		MinWidth="600" MinHeight="600"
+        x:Class="GabrielElbrus.CustomerWindow"
+        Title="Новый клиент">
+		<Border
+			Width="550"
+			Height="550"
+			Background="White">
+		<Grid
+			RowDefinitions="* * * * * * * * * * *"
+			ColumnDefinitions="* 2*">
+			<WrapPanel
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.ColumnSpan="2">
+				<Image
+					Name="employeeImage"
+					Margin="10"
+					Width="30"
+					Height="30">
+				</Image>
+				<TextBlock
+					Name="employeeName"
+					Margin="0 10 10 10">
+				</TextBlock>
+				<TextBlock
+					Name="employeePosition"
+					Margin="10"
+					FontWeight="Bold">
+				</TextBlock>
+			</WrapPanel>
+			<TextBlock
+				Grid.Row="1"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Код:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="ФИО:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="3"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Паспорт:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="4"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Дата рождения:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="5"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Адрес:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="6"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Логин:">
+			</TextBlock>
+			<TextBlock
+				Grid.Row="7"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				Margin="10 15"
+				Text="Пароль:">
+			</TextBlock>
+			<TextBox
+				Name="codeBox"
+				Grid.Row="1"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				Text="{Binding CustomerCode}">
+			</TextBox>
+			<TextBox
+				Name="nameBox"
+				Grid.Row="2"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="300"
+				Text="{Binding CustomerName}">
+			</TextBox>
+			<MaskedTextBox
+				Name="passportBox"
+				Grid.Row="3"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				Mask="9999 999999"
+				Text="{Binding CustomerPassport}">
+			</MaskedTextBox>
+			<CalendarDatePicker
+				Name="birthBox"
+				Grid.Row="4"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				SelectedDate="{Binding CustomerBirth}">
+			</CalendarDatePicker>
+			<TextBox
+				Name="addressBox"
+				Grid.Row="5"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="300"
+				Text="{Binding CustomerAddress}">
+			</TextBox>
+			<TextBox
+				Name="loginBox"
+				Grid.Row="6"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				Text="{Binding CustomerLogin}">
+			</TextBox>
+			<TextBox
+				Name="passwordBox"
+				Grid.Row="7"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				Margin="10"
+				Width="150"
+				Text="{Binding CustomerPassword}">
+			</TextBox>
+			<TextBlock
+				Name="errorBlock"
+				Grid.Row="8"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				HorizontalAlignment="Center"
+				Margin="10"
+				Foreground="Red"
+				Text="Некорректные данные">
+			</TextBlock>
+			<WrapPanel
+				Grid.Row="13"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				HorizontalAlignment="Center">
+				<Button
+					Click="Cancel"
+					Margin="10"
+					Content="Отмена">
+				</Button>
+				<Button
+					Click="Save"
+					Margin="0 10"
+					Content="Сохранить">
+				</Button>
+			</WrapPanel>
+		</Grid>
+	</Border>
+</Window>

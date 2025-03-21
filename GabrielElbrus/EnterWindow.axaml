@@ -1,0 +1,104 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+        x:Class="GabrielElbrus.EnterWindow"
+        Title="История авторизаций">
+	<Grid
+		RowDefinitions="50 55 * 55">
+		<WrapPanel
+			Grid.Row="0">
+			<Image
+				Name="employeeImage"
+				Margin="10"
+				Width="30"
+				Height="30">
+			</Image>
+			<TextBlock
+				Name="employeeName"
+				Margin="0 10 10 10">
+			</TextBlock>
+			<TextBlock
+				Name="employeePosition"
+				Margin="10"
+				FontWeight="Bold">
+			</TextBlock>
+		</WrapPanel>
+		<WrapPanel
+			Grid.Row="1">
+			<ComboBox
+				Name="filterBox"
+				SelectionChanged="ForFilter"
+				Margin="10"
+				Width="300">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock
+							TextWrapping="Wrap"
+							Text="{Binding EmployeeLogin}">
+						</TextBlock>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<ComboBox
+				Name="sortBox"
+				SelectionChanged="ForSort"
+				Margin="10"
+				Width="300">
+				<ComboBoxItem>Сортировка</ComboBoxItem>
+				<ComboBoxItem>По дате (возрастание)</ComboBoxItem>
+				<ComboBoxItem>По дате (убывание)</ComboBoxItem>
+			</ComboBox>
+		</WrapPanel>
+		<ListBox
+			Name="enterList"
+			Grid.Row="2">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border
+						Margin="0 0 10 0"
+						BorderBrush="rgb(73, 140, 81)"
+						BorderThickness="1">
+						<Grid
+							ColumnDefinitions="* * *">
+							<TextBlock
+								Grid.Column="0"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Center"
+								Margin="10"
+								FontWeight="Bold"
+								Text="{Binding EnterTime}">
+							</TextBlock>
+							<TextBlock
+								Grid.Column="1"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Margin="10"
+								Text="{Binding EmployeeLogin}">
+							</TextBlock>
+							<CheckBox
+								Grid.Column="2"
+								HorizontalAlignment="Right"
+								VerticalAlignment="Center"
+								Margin="10"
+								IsEnabled="False"
+								IsChecked="{Binding EnterResult}">
+							</CheckBox>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<WrapPanel
+			Grid.Row="3"
+			HorizontalAlignment="Center">
+			<Button
+				Click="GoBack"
+				HorizontalAlignment="Center"
+				Margin="30 10"
+				Content="Назад">
+			</Button>
+		</WrapPanel>
+	</Grid>
+</Window>
